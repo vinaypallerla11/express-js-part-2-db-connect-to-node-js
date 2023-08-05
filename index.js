@@ -38,12 +38,3 @@ app.get("/books/", async (request, response) => {
   response.send(booksArray);
 });
 
-app.get("/", async (request, response) => {
-  const getBooksQuery = `
-    SELECT
-      *
-    FROM
-      author;`;
-  const authorArray = await db.all(getBooksQuery);
-  response.send(authorArray);
-});
